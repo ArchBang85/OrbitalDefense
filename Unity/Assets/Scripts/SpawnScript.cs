@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpawnScript : MonoBehaviour {
 	
-	Random rand;
+	
 	public GameObject[] enemyPreFab;
 	public GameObject LeftEdge, RightEdge;
 	

@@ -47,6 +47,10 @@
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\ExplosionCleanup.cs" />
      <Compile Include="Assets\Scripts\ExplosionLightFade.cs" />
+     <Compile Include="Assets\Scripts\FireAtClosest.cs" />
+     <Compile Include="Assets\Scripts\FireOut.cs" />
+     <Compile Include="Assets\Scripts\FiringScript.cs" />
+     <Compile Include="Assets\Scripts\Rotation.cs" />
      <Compile Include="Assets\Scripts\SpawnScript.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
   </ItemGroup>
