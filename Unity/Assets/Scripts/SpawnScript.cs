@@ -33,7 +33,7 @@ public class SpawnScript : MonoBehaviour {
 			{
 				Instantiate (enemyPreFab[Random.Range(0,enemyPreFab.Length)], 
 					new Vector3(Random.Range(LeftEdge.transform.position.x, RightEdge.transform.position.x), 
-					Random.Range(LeftEdge.transform.position.y, RightEdge.transform.position.y), 0), Quaternion.identity);
+					Random.Range(LeftEdge.transform.position.y, RightEdge.transform.position.y), Random.Range (0, 40)*0.1f), Quaternion.identity);
 				spawnCounter = Random.Range (enemySpawnMin, enemySpawnMax);
 			}
 		}

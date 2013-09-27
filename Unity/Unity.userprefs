@@ -2,8 +2,15 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SpawnScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\SpawnScript.cs" Line="8" Column="8" />
+      <File FileName="Assets\Scripts\SpawnScript.cs" Line="36" Column="102" />
+      <File FileName="Assets\Scripts\EnemyMovement.cs" Line="29" Column="29" />
+      <File FileName="Assets\Scripts\ExplosionCleanup.cs" Line="6" Column="30" />
     </Files>
+    <Pads>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
