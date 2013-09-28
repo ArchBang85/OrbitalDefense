@@ -26,32 +26,58 @@ public class FireAtClosest : MonoBehaviour {
 	public float speed = 10f;
 	private GameObject victim;
 	GameObject enemy;
+	public float rotSpeed = 360f;
+	private bool checkFlag = false;
+	private bool runOnce = true;
 	
 	public float acceleration = 9f;
-	private float turnWait; 
-	public float turnWaitReset = 1f;
+	private float turnWait, initialCheck; 
+	public float turnWaitReset = 0.5f;
+	private Vector3 endzone;
 	
 	// Use this for initialization
 	void Start () {
 		
 	turnWait = turnWaitReset;
+	initialCheck = turnWaitReset;
 	victim = FindClosestEnemy();
-	Destroy(this.gameObject, 4f);
+	Destroy(this.gameObject, 2f);
 		transform.position = Vector3.MoveTowards(transform.position, new Vector3 (0,0,1), -Time.deltaTime * speed);
+		endzone = new Vector3 (0,0,1);
+
 	}
 	// Update is called once per frame
 	void Update () {
 		speed = speed  + (acceleration * 0.05f);
-		if (turnWait > 0) { turnWait -= Time.deltaTime; }
-		else {
-			if ((victim.transform.position - transform.position).sqrMagnitude > 50) { victim = FindClosestEnemy();}
-			if (victim == null) { victim = FindClosestEnemy();}
+		turnWait -= Time.deltaTime;
+		
+		if (victim != null) {endzone = victim.transform.position;}
+		if (initialCheck < 0) {checkFlag = true;}
+		else initialCheck -= Time.deltaTime;
+		{ transform.position = Vector3.MoveTowards(transform.position, new Vector3 (0,0,1), -Time.deltaTime * speed);}
+		if (checkFlag && runOnce) {runOnce = false; endzone *= 10;}
+		if (checkFlag) //make it so that the thing does the thing (missiles know their speed for dynamic acceleration).
+		{ 
+		
+		 	if (turnWait < 0) {
+			Vector3 D = victim.transform.position - transform.position;
+			Quaternion rot = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(D), rotSpeed * Time.deltaTime);
+			transform.rotation = rot;
+			transform.eulerAngles = new Vector3(transform.eulerAngles.x+90, transform.eulerAngles.y, 0);
+			
+							
 			turnWait = turnWaitReset;
+			}
+			transform.position = Vector3.MoveTowards(transform.position, endzone, Time.deltaTime * speed);
 		}
-	transform.position = Vector3.MoveTowards(transform.position, victim.transform.position, Time.deltaTime * speed);
+		else {victim = FindClosestEnemy();}
+
 		
+
+		}
+
+			
 		
-	}
 	
 	void OnTriggerEnter (Collider collDetect) {
 	
