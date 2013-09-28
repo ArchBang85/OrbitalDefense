@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\ExplosionBlastwave.cs" />
      <Compile Include="Assets\Scripts\ExplosionCleanup.cs" />
      <Compile Include="Assets\Scripts\ExplosionLightFade.cs" />
      <Compile Include="Assets\Scripts\FireAtClosest.cs" />

@@ -12,7 +12,7 @@ public class FiringScript : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		coolDown = coolDownReset;
+		coolDown = 1f;
 	
 	}
 	

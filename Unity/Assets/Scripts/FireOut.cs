@@ -15,7 +15,7 @@ public class FireOut : MonoBehaviour {
 	void Update () {
 		
 		transform.position = Vector3.MoveTowards(transform.position, new Vector3 (0,0,1), -Time.deltaTime * speed);
-		
+
 	}
 	
 	void OnTriggerEnter (Collider collDetect) {
